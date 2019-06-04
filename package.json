@@ -1,0 +1,16 @@
+{
+  "name": "bookmarklets",
+  "author": "Paweł Białaszczyk",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Bookmarklets for my personal use",
+  "keywords": [
+    "bookmarklet"
+  ],
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "bookmarkleter": "^1.0.1"
+  }
+}
