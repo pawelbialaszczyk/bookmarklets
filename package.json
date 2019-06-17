@@ -8,9 +8,12 @@
     "bookmarklet"
   ],
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "devDependencies": {
-    "bookmarkleter": "^1.0.1"
+    "bookmarkleter": "^1.0.1",
+    "cypress": "^4.5.0"
   }
 }

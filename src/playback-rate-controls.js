@@ -29,6 +29,8 @@ const createInfo = (info) => {
 const createContainer = (...children) => {
   const el = document.createElement('div');
 
+  el.id = 'e6e7f007-085e-4974-899b-47c18cbd1f46';
+
   Object.assign(el.style, {
     'position': 'fixed',
     'bottom': '1rem',
@@ -72,7 +74,7 @@ fasterBtn.addEventListener('click', event => {
 });
 
 document.addEventListener('fullscreenchange', event => {
-  const isFullScreen = document.fullscreenElement != null;
+  const isFullscreen = document.fullscreenElement != null;
 
-  container.hidden = isFullScreen;
+  container.style.visibility = isFullscreen ? 'hidden' : 'visible';
 });
