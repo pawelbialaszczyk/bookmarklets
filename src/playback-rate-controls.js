@@ -74,5 +74,5 @@ fasterBtn.addEventListener('click', event => {
 document.addEventListener('fullscreenchange', event => {
   const isFullScreen = document.fullscreenElement != null;
 
-  control.hidden = isFullScreen;
+  container.hidden = isFullScreen;
 });
