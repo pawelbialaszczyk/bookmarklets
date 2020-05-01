@@ -18,3 +18,5 @@ jobs:
     - run: npm run build src/bandcamp-volume.js
 
     - run: npm run build src/playback-rate-controls.js
+
+    - run: npm run cypress:run
