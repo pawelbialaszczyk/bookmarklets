@@ -15,7 +15,7 @@ describe('Playback Rate Controls', () => {
     cy.intercept('GET', '/', {
       statusCode: 200,
       headers: { 'Content-Type': 'text/html' },
-      body: '<audio controls src="https://www.w3schools.com/html/horse.ogg">',
+      body: '<audio controls muted src="https://www.w3schools.com/html/horse.ogg">',
     });
     cy.visit('/');
     cy.runBookmarklet(bookmarklet);
