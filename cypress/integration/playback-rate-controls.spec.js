@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 describe('Playback Rate Controls', () => {
 
   const media = () => cy.get('video, audio');
