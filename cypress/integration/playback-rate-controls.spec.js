@@ -3,7 +3,7 @@
 describe('Playback Rate Controls', () => {
 
   const media = () => cy.get('video, audio');
-  const controls = () => cy.get('#e6e7f007-085e-4974-899b-47c18cbd1f46');
+  const controls = () => cy.get('#47c18cbd1f46');
 
   let bookmarklet;
 

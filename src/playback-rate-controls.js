@@ -29,7 +29,7 @@ const createInfo = (info) => {
 const createContainer = (...children) => {
   const el = document.createElement('div');
 
-  el.id = 'e6e7f007-085e-4974-899b-47c18cbd1f46';
+  el.id = '47c18cbd1f46';
 
   Object.assign(el.style, {
     'position': 'fixed',
