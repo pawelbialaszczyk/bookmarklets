@@ -11,6 +11,5 @@ jobs:
       with:
         node-version: '16'
     - run: npm ci
-    - run: npm run build src/bandcamp-volume.js
-    - run: npm run build src/playback-rate-controls.js
+    - run: npm run build
     - run: npm run cypress:run

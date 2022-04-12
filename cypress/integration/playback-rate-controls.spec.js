@@ -5,12 +5,6 @@ describe('Playback Rate Controls', () => {
   const media = () => cy.get('video, audio');
   const controls = () => cy.get('#47c18cbd1f46');
 
-  let bookmarklet;
-
-  before(() => {
-    cy.buildBookmarklet('./src/playback-rate-controls.js').then(b => bookmarklet = b);
-  });
-
   beforeEach(() => {
     cy.intercept('GET', '/', {
       statusCode: 200,
@@ -18,7 +12,7 @@ describe('Playback Rate Controls', () => {
       body: '<audio controls muted src="https://www.w3schools.com/html/horse.ogg">',
     });
     cy.visit('/');
-    cy.runBookmarklet(bookmarklet);
+    cy.runBookmarklet('./dist/playback-rate-controls.bookmarklet');
     media().then($media => $media.get(0).play());
   });
 

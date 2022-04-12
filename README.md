@@ -1,9 +1,12 @@
-![](https://github.com/pawelbialaszczyk/bookmarklets/workflows/Build/badge.svg)
+[![Build status](https://github.com/pawelbialaszczyk/bookmarklets/workflows/Build/badge.svg)](https://github.com/pawelbialaszczyk/bookmarklets)
 
 # Bookmarklets
 
 Bookmarklets for my personal use.
 
-## Building
+## Usage
 
-Run `npm run build path-to-bookmarklet` to build the bookmarklet.
+Run `npm run build` to build the bookmarklets. The generated output will be available in the `dist` folder.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
