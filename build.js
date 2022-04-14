@@ -6,6 +6,7 @@ const build = async (sourcePath, destinationPath) => {
   const source = await fs.readFile(sourcePath, 'utf8');
 
   const bookmarklet = bookmarkleter(source, {
+    urlencode: false,
     iife: true,
     minify: true,
   });
