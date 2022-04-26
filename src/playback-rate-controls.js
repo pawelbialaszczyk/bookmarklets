@@ -3,24 +3,31 @@ const createButton = (text) => {
 
   btn.innerHTML = text;
   btn.type = 'button';
+
   Object.assign(btn.style, {
     'width': '10rem',
-    'font-size': '1.4rem',
-    'height': '100%',
+    'font': 'revert',
+    'background': 'revert',
+    'border': 'revert',
+    'margin': 'revert',
+    'padding': 'revert',
   });
 
   return btn;
 };
 
 const createInfo = (info) => {
-  const el = document.createElement('span');
+  const el = document.createElement('div');
 
   el.innerHTML = info;
+
   Object.assign(el.style, {
     'width': '5rem',
-    'display': 'block',
-    'text-align': 'center',
-    'font-size': '1.4rem',
+    'display': 'flex',
+    'align-items': 'center',
+    'justify-content': 'center',
+    'background-color': 'white',
+    'font': 'revert',
   });
 
   return el;
@@ -36,10 +43,8 @@ const createContainer = (...children) => {
     'bottom': '1rem',
     'right': '1rem',
     'display': 'flex',
-    'align-items': 'center',
+    'align-items': 'stretch',
     'z-index': '999999',
-    'background-color': '#ccc',
-    'height': '3rem',
   });
 
   children.forEach(child => {
