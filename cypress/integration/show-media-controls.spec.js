@@ -8,12 +8,15 @@ describe('Show media controls', () => {
       headers: { 'Content-Type': 'text/html' },
       body: '<audio style="visibility: hidden" muted src="https://www.w3schools.com/html/horse.ogg">',
     });
+
     cy.visit('/');
   });
 
   it('should display controls', () => {
     media().should('not.be.visible');
+
     cy.runBookmarklet('./dist/show-media-controls.bookmarklet');
+
     media().should('be.visible');
   });
 

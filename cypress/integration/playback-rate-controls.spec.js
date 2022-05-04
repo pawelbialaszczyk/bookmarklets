@@ -9,8 +9,11 @@ describe('Playback rate controls', () => {
       headers: { 'Content-Type': 'text/html' },
       body: '<audio controls muted src="https://www.w3schools.com/html/horse.ogg">',
     });
+
     cy.visit('/');
+
     cy.runBookmarklet('./dist/playback-rate-controls.bookmarklet');
+
     media().then($media => $media.get(0).play());
   });
 
@@ -22,16 +25,23 @@ describe('Playback rate controls', () => {
     media().should($media => {
       expect($media.get(0).playbackRate).to.equal(1);
     });
+
     controls().should('contain.text', '1.0');
+
     controls().contains('Slower').click();
+
     media().should($media => {
       expect(+$media.get(0).playbackRate.toFixed(1)).to.equal(0.9);
     });
+
     controls().should('contain.text', '0.9');
+
     controls().contains('Slower').click();
+
     media().should($media => {
       expect(+$media.get(0).playbackRate.toFixed(1)).to.equal(0.8);
     });
+
     controls().should('contain.text', '0.8');
   });
 
@@ -39,23 +49,33 @@ describe('Playback rate controls', () => {
     media().should($media => {
       expect($media.get(0).playbackRate).to.equal(1);
     });
+
     controls().should('contain.text', '1.0');
+
     controls().contains('Faster').click();
+
     media().should($media => {
       expect(+$media.get(0).playbackRate.toFixed(1)).to.equal(1.1);
     });
+
     controls().should('contain.text', '1.1');
+
     controls().contains('Faster').click();
+
     media().should($media => {
       expect(+$media.get(0).playbackRate.toFixed(1)).to.equal(1.2);
     });
+
     controls().should('contain.text', '1.2');
   });
 
   it('should hide controls while in fullscreen mode', () => {
     cy.toggleFullscreen(true);
+
     controls().should('exist').and('not.be.visible');
+
     cy.toggleFullscreen(false);
+
     controls().should('exist').and('be.visible');
   });
 
