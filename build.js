@@ -17,6 +17,6 @@ const build = async (sourcePath, destinationPath) => {
 };
 
 Promise.all([
-  build('./src/bandcamp-volume.js', './dist/bandcamp-volume.bookmarklet'),
   build('./src/playback-rate-controls.js', './dist/playback-rate-controls.bookmarklet'),
+  build('./src/show-media-controls.js', './dist/show-media-controls.bookmarklet'),
 ]);
