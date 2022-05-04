@@ -6,7 +6,13 @@ describe('Show media controls', () => {
     cy.intercept('GET', '/', {
       statusCode: 200,
       headers: { 'Content-Type': 'text/html' },
-      body: '<audio style="visibility: hidden" muted src="https://www.w3schools.com/html/horse.ogg">',
+      body: `
+        <audio
+          style="visibility: hidden"
+          muted
+          src="https://www.w3schools.com/html/horse.ogg"
+        >
+      `,
     });
 
     cy.visit('/');
