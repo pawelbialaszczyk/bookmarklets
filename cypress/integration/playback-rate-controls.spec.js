@@ -1,4 +1,4 @@
-describe('Playback Rate Controls', () => {
+describe('Playback rate controls', () => {
 
   const media = () => cy.get('video, audio');
   const controls = () => cy.get('#47c18cbd1f46');

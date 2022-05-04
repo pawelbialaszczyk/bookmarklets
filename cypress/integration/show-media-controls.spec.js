@@ -1,4 +1,4 @@
-describe('Show Media Controls', () => {
+describe('Show media controls', () => {
 
   const media = () => cy.get('video, audio');
 
