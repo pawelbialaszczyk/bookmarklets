@@ -1,4 +1,4 @@
-const audio = document.querySelector('audio[src]');
+const audio = document.querySelector('audio');
 
 if (!audio) {
   alert('Audio not found');
