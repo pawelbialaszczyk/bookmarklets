@@ -18,7 +18,11 @@ describe('Playback rate controls', () => {
   });
 
   it('should display controls', () => {
-    controls().should('be.visible');
+    controls()
+      .should('be.visible')
+      .should('contain.text', 'Slower')
+      .should('contain.text', '1.0')
+      .should('contain.text', 'Faster');
   });
 
   it('should be able to decrease playback rate', () => {
