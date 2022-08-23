@@ -1,3 +1,35 @@
+const getPropertyDescriptor = (object, property) => {
+  const descriptor = Object.getOwnPropertyDescriptor(object, property);
+
+  if (descriptor === undefined) {
+    return getPropertyDescriptor(Object.getPrototypeOf(object), property);
+  }
+
+  if (descriptor === null) {
+    throw new Error(`Property not found: ${property}`);
+  }
+
+  if (descriptor) {
+    return descriptor;
+  }
+};
+
+const subscribe = (object, property, callback) => {
+  const descriptor = getPropertyDescriptor(object, property);
+
+  Object.defineProperty(object, property, {
+    configurable: true,
+    enumerable: true,
+    get() {
+      return descriptor.get.call(this);
+    },
+    set(value) {
+      callback(value);
+      descriptor.set.call(this, value);
+    },
+  });
+};
+
 const createButton = (text) => {
   const btn = document.createElement('button');
 
@@ -76,6 +108,10 @@ slowerBtn.addEventListener('click', event => {
 fasterBtn.addEventListener('click', event => {
   media.playbackRate += 0.1;
   infoEl.innerHTML = media.playbackRate.toFixed(1);
+});
+
+subscribe(media, 'playbackRate', value => {
+  infoEl.innerHTML = value.toFixed(1);
 });
 
 document.addEventListener('fullscreenchange', event => {

@@ -79,6 +79,20 @@ describe('Playback rate controls', () => {
     controls().should('contain.text', '1.2');
   });
 
+  it('should subscribe to playback rate change', () => {
+    media().should($media => {
+      expect($media.get(0).playbackRate).to.equal(1);
+    });
+
+    controls().should('contain.text', '1.0');
+
+    media().then($media => {
+      $media.get(0).playbackRate = 1.5;
+    });
+
+    controls().should('contain.text', '1.5');
+  });
+
   it('should hide controls while in fullscreen mode', () => {
     cy.toggleFullscreen(true);
 
