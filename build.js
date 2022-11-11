@@ -17,6 +17,7 @@ const build = async (sourcePath, destinationPath) => {
 };
 
 Promise.all([
+  build('./src/eat-my-shorts.js', './dist/eat-my-shorts.bookmarklet'),
   build('./src/kill-sticky.js', './dist/kill-sticky.bookmarklet'),
   build('./src/playback-rate-controls.js', './dist/playback-rate-controls.bookmarklet'),
   build('./src/show-media-controls.js', './dist/show-media-controls.bookmarklet'),

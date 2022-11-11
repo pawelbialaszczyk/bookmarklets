@@ -2,5 +2,7 @@ const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   video: false,
-  e2e: {},
+  e2e: {
+    chromeWebSecurity: false,
+  },
 });
