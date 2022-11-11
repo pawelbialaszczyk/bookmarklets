@@ -2,6 +2,13 @@ const fs = require('fs/promises');
 const path = require('path');
 const bookmarkleter = require('bookmarkleter');
 
+const bookmarklets = [
+  'eat-my-shorts',
+  'kill-sticky',
+  'playback-rate-controls',
+  'show-media-controls',
+];
+
 const build = async (sourcePath, destinationPath) => {
   const source = await fs.readFile(sourcePath, 'utf8');
 
@@ -16,9 +23,8 @@ const build = async (sourcePath, destinationPath) => {
   await fs.writeFile(destinationPath, bookmarklet, 'utf8');
 };
 
-Promise.all([
-  build('./src/eat-my-shorts.js', './dist/eat-my-shorts.bookmarklet'),
-  build('./src/kill-sticky.js', './dist/kill-sticky.bookmarklet'),
-  build('./src/playback-rate-controls.js', './dist/playback-rate-controls.bookmarklet'),
-  build('./src/show-media-controls.js', './dist/show-media-controls.bookmarklet'),
-]);
+Promise.all(
+  bookmarklets.map(bookmarklet =>
+    build(`./src/${bookmarklet}.js`, `./dist/${bookmarklet}.bookmarklet`),
+  ),
+);
