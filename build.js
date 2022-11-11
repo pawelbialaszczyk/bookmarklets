@@ -1,6 +1,6 @@
-const fs = require('fs/promises');
-const path = require('path');
-const bookmarkleter = require('bookmarkleter');
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import bookmarkleter from 'bookmarkleter';
 
 const bookmarklets = [
   'eat-my-shorts',
@@ -23,7 +23,7 @@ const build = async (sourcePath, destinationPath) => {
   await fs.writeFile(destinationPath, bookmarklet, 'utf8');
 };
 
-Promise.all(
+await Promise.all(
   bookmarklets.map(bookmarklet =>
     build(`./src/${bookmarklet}.js`, `./dist/${bookmarklet}.bookmarklet`),
   ),
