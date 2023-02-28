@@ -98,11 +98,11 @@ describe('Playback rate controls', () => {
   });
 
   it('should hide controls while in fullscreen mode', () => {
-    cy.toggleFullscreen(true);
+    cy.setFullscreen(true);
 
     controls().should('exist').and('not.be.visible');
 
-    cy.toggleFullscreen(false);
+    cy.setFullscreen(false);
 
     controls().should('exist').and('be.visible');
   });

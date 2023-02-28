@@ -10,7 +10,7 @@ Cypress.Commands.add('runBookmarklet', (bookmarkletPath) => {
     );
 });
 
-Cypress.Commands.add('toggleFullscreen', (isFullscreen) => {
+Cypress.Commands.add('setFullscreen', (isFullscreen) => {
   cy.document().then(document => {
     Object.defineProperty(document, 'fullscreenElement', {
       configurable: true,

@@ -8,8 +8,8 @@ declare namespace Cypress {
     runBookmarklet(bookmarkletPath: string): Chainable<unknown>
 
     /**
-     * Toggle browser's fullscreen mode
+     * Set browser's fullscreen mode
      */
-    toggleFullscreen(isFullscreen: boolean): Chainable<unknown>
+    setFullscreen(isFullscreen: boolean): Chainable<unknown>
   }
 }
