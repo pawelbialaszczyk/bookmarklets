@@ -9,8 +9,7 @@ jobs:
       with:
         node-version: 18
     - run: npm ci
-    - run: npm run build
-    - run: npm run cypress:run
+    - run: npm test
     - uses: actions/upload-artifact@v3
       with:
         name: bookmarklets

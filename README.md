@@ -8,6 +8,10 @@ Bookmarklets for my personal use.
 
 Run `npm run build` to build the bookmarklets. The generated output will be available in the `dist` folder.
 
+## Testing
+
+Run `npm test` to run tests in headless mode.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
