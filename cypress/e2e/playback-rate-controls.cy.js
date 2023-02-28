@@ -4,7 +4,7 @@
 
 describe('Playback rate controls', () => {
 
-  const media = () => cy.get('video, audio');
+  const media = () => cy.get('audio');
   const controls = () => cy.get('#47c18cbd1f46');
 
   beforeEach(() => {
