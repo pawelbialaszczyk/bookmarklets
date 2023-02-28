@@ -1,3 +1,7 @@
+/// <reference types="cypress" />
+/// <reference types="../support" />
+// @ts-check
+
 describe('Playback rate controls', () => {
 
   const media = () => cy.get('video, audio');

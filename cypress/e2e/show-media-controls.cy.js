@@ -1,3 +1,7 @@
+/// <reference types="cypress" />
+/// <reference types="../support" />
+// @ts-check
+
 describe('Show media controls', () => {
 
   const media = () => cy.get('video, audio');

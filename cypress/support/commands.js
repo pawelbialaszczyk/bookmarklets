@@ -1,3 +1,6 @@
+/// <reference types="cypress" />
+// @ts-check
+
 Cypress.Commands.add('runBookmarklet', (bookmarkletPath) => {
   cy.readFile(bookmarkletPath, 'utf8')
     .then(bookmarklet => cy.window()

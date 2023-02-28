@@ -1,3 +1,7 @@
+/// <reference types="cypress" />
+/// <reference types="../support" />
+// @ts-check
+
 describe('Kill sticky', () => {
 
   const fixed = () => cy.get('[data-test="fixed-element"]');

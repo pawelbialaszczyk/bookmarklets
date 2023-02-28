@@ -1,3 +1,7 @@
+/// <reference types="cypress" />
+/// <reference types="../support" />
+// @ts-check
+
 describe('Eat my shorts', () => {
 
   it('should redirect from shorts player to normal player', () => {
