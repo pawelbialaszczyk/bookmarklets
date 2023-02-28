@@ -30,7 +30,7 @@ const subscribe = (object, property, callback) => {
   });
 };
 
-const createButton = (text) => {
+const createButton = text => {
   const btn = document.createElement('button');
 
   btn.innerHTML = text;
@@ -48,7 +48,7 @@ const createButton = (text) => {
   return btn;
 };
 
-const createInfo = (info) => {
+const createInfo = info => {
   const el = document.createElement('div');
 
   el.innerHTML = info;
