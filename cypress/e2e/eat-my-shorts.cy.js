@@ -3,7 +3,6 @@
 // @ts-check
 
 describe('Eat my shorts', () => {
-
   it('should redirect from shorts player to normal player', () => {
     cy.intercept('GET', '/**/*', {
       statusCode: 200,
@@ -17,5 +16,4 @@ describe('Eat my shorts', () => {
 
     cy.url().should('contain', '/watch?v=Pow-kqk0Cr8');
   });
-
 });

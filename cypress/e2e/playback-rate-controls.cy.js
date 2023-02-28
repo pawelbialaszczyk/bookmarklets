@@ -3,7 +3,6 @@
 // @ts-check
 
 describe('Playback rate controls', () => {
-
   const media = () => cy.get('audio');
   const controls = () => cy.get('#47c18cbd1f46');
 
@@ -106,5 +105,4 @@ describe('Playback rate controls', () => {
 
     controls().should('exist').and('be.visible');
   });
-
 });

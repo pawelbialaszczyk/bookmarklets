@@ -3,7 +3,6 @@
 // @ts-check
 
 describe('Kill sticky', () => {
-
   const fixed = () => cy.get('[data-test="fixed-element"]');
   const sticky = () => cy.get('[data-test="sticky-element"]');
 
@@ -35,5 +34,4 @@ describe('Kill sticky', () => {
 
     sticky().should('not.exist');
   });
-
 });
