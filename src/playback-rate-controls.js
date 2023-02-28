@@ -60,6 +60,7 @@ const createInfo = (info) => {
     'justify-content': 'center',
     'background-color': 'white',
     'font': 'revert',
+    'color': 'initial',
   });
 
   return el;
