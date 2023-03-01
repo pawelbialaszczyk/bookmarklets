@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-/// <reference types="../support" />
+/// <reference types=".." />
 // @ts-check
 
 describe('Playback rate controls', () => {
