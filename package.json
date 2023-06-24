@@ -15,7 +15,7 @@
     "cypress:run": "cypress run"
   },
   "devDependencies": {
-    "bookmarkleter": "^1.0.1",
+    "bookmarkleter": "^1.1.0",
     "cypress": "^12.7.0"
   }
 }
