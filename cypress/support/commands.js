@@ -4,10 +4,8 @@
 Cypress.Commands.add('runBookmarklet', bookmarkletPath => {
   cy.readFile(bookmarkletPath, 'utf8')
     .then(bookmarklet => cy.window()
-      .then(window => {
-        window.location = bookmarklet;
-      })
-    );
+      .its('location')
+      .invoke('assign', bookmarklet));
 });
 
 Cypress.Commands.add('setFullscreen', isFullscreen => {
