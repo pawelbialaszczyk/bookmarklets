@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 declare namespace Cypress {
-  interface Chainable<Subject> {
+  interface Chainable {
     /**
      * Run bookmarklet from a given path
      */
