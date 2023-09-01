@@ -4,7 +4,7 @@
 
 describe('Playback rate controls', () => {
   const media = () => cy.get('audio');
-  const controls = () => cy.get('#47c18cbd1f46');
+  const controls = () => cy.get('[data-test="playback-rate-controls"]');
 
   beforeEach(() => {
     cy.intercept('GET', '/', {

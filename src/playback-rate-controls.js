@@ -69,7 +69,7 @@ const createInfo = info => {
 const createContainer = (...children) => {
   const el = document.createElement('div');
 
-  el.id = '47c18cbd1f46';
+  el.setAttribute('data-test', 'playback-rate-controls');
 
   Object.assign(el.style, {
     'position': 'fixed',
