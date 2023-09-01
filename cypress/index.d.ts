@@ -5,11 +5,11 @@ declare namespace Cypress {
     /**
      * Run bookmarklet from a given path
      */
-    runBookmarklet(bookmarkletPath: string): Chainable<unknown>
+    runBookmarklet(bookmarkletPath: string): Chainable<unknown>;
 
     /**
      * Set browser's fullscreen mode
      */
-    setFullscreen(isFullscreen: boolean): Chainable<unknown>
+    setFullscreen(isFullscreen: boolean): Chainable<unknown>;
   }
 }
