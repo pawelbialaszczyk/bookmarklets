@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+/// <reference types=".." />
 // @ts-check
 
 Cypress.Commands.add('runBookmarklet', bookmarkletPath => {
