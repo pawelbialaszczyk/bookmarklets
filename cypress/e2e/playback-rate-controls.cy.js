@@ -35,63 +35,47 @@ describe('Playback rate controls', () => {
   });
 
   it('should be able to decrease playback rate', () => {
-    media().should($media => {
-      expect($media.get(0).playbackRate).to.equal(1);
-    });
+    media().invoke('prop', 'playbackRate').should('equal', 1);
 
     controls().should('contain.text', '1.0');
 
     controls().contains('Slower').click();
 
-    media().should($media => {
-      expect($media.get(0).playbackRate).to.equal(0.9);
-    });
+    media().invoke('prop', 'playbackRate').should('equal', 0.9);
 
     controls().should('contain.text', '0.9');
 
     controls().contains('Slower').click();
 
-    media().should($media => {
-      expect($media.get(0).playbackRate).to.equal(0.8);
-    });
+    media().invoke('prop', 'playbackRate').should('equal', 0.8);
 
     controls().should('contain.text', '0.8');
   });
 
   it('should be able to increase playback rate', () => {
-    media().should($media => {
-      expect($media.get(0).playbackRate).to.equal(1);
-    });
+    media().invoke('prop', 'playbackRate').should('equal', 1);
 
     controls().should('contain.text', '1.0');
 
     controls().contains('Faster').click();
 
-    media().should($media => {
-      expect($media.get(0).playbackRate).to.equal(1.1);
-    });
+    media().invoke('prop', 'playbackRate').should('equal', 1.1);
 
     controls().should('contain.text', '1.1');
 
     controls().contains('Faster').click();
 
-    media().should($media => {
-      expect($media.get(0).playbackRate).to.equal(1.2);
-    });
+    media().invoke('prop', 'playbackRate').should('equal', 1.2);
 
     controls().should('contain.text', '1.2');
   });
 
   it('should subscribe to playback rate change', () => {
-    media().should($media => {
-      expect($media.get(0).playbackRate).to.equal(1);
-    });
+    media().invoke('prop', 'playbackRate').should('equal', 1);
 
     controls().should('contain.text', '1.0');
 
-    media().then($media => {
-      $media.get(0).playbackRate = 1.5;
-    });
+    media().invoke('prop', 'playbackRate', 1.5);
 
     controls().should('contain.text', '1.5');
   });
