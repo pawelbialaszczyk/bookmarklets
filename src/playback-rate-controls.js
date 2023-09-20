@@ -70,11 +70,11 @@ const container = createContainer(slowerBtn, infoEl, fasterBtn);
 document.body.appendChild(container);
 
 slowerBtn.addEventListener('click', event => {
-  media.playbackRate -= 0.1;
+  media.playbackRate = (media.playbackRate - 0.1).toFixed(1);
 });
 
 fasterBtn.addEventListener('click', event => {
-  media.playbackRate += 0.1;
+  media.playbackRate = (media.playbackRate + 0.1).toFixed(1);
 });
 
 media.addEventListener('ratechange', event => {

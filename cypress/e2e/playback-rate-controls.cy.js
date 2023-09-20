@@ -44,7 +44,7 @@ describe('Playback rate controls', () => {
     controls().contains('Slower').click();
 
     media().should($media => {
-      expect(+$media.get(0).playbackRate.toFixed(1)).to.equal(0.9);
+      expect($media.get(0).playbackRate).to.equal(0.9);
     });
 
     controls().should('contain.text', '0.9');
@@ -52,7 +52,7 @@ describe('Playback rate controls', () => {
     controls().contains('Slower').click();
 
     media().should($media => {
-      expect(+$media.get(0).playbackRate.toFixed(1)).to.equal(0.8);
+      expect($media.get(0).playbackRate).to.equal(0.8);
     });
 
     controls().should('contain.text', '0.8');
@@ -68,7 +68,7 @@ describe('Playback rate controls', () => {
     controls().contains('Faster').click();
 
     media().should($media => {
-      expect(+$media.get(0).playbackRate.toFixed(1)).to.equal(1.1);
+      expect($media.get(0).playbackRate).to.equal(1.1);
     });
 
     controls().should('contain.text', '1.1');
@@ -76,7 +76,7 @@ describe('Playback rate controls', () => {
     controls().contains('Faster').click();
 
     media().should($media => {
-      expect(+$media.get(0).playbackRate.toFixed(1)).to.equal(1.2);
+      expect($media.get(0).playbackRate).to.equal(1.2);
     });
 
     controls().should('contain.text', '1.2');
