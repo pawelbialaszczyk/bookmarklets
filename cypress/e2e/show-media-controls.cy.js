@@ -3,9 +3,9 @@
 // @ts-check
 
 describe('Show media controls', () => {
-  const media = () => cy.get('audio');
+  it('should display controls', () => {
+    const media = () => cy.get('audio');
 
-  beforeEach(() => {
     cy.intercept('GET', '/', {
       statusCode: 200,
       headers: { 'Content-Type': 'text/html' },
@@ -19,9 +19,7 @@ describe('Show media controls', () => {
     });
 
     cy.visit('/');
-  });
 
-  it('should display controls', () => {
     media().should('not.be.visible');
 
     cy.runBookmarklet('./dist/show-media-controls.bookmarklet');
