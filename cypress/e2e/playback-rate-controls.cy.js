@@ -21,7 +21,7 @@ describe('Playback rate controls', () => {
 
     cy.visit('/');
 
-    cy.runBookmarklet('./dist/playback-rate-controls.bookmarklet');
+    cy.runBookmarklet('playback-rate-controls');
 
     media().then($media => $media.get(0).play());
   });

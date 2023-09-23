@@ -2,8 +2,8 @@
 /// <reference types=".." />
 // @ts-check
 
-Cypress.Commands.add('runBookmarklet', bookmarkletPath => {
-  cy.readFile(bookmarkletPath, 'utf8')
+Cypress.Commands.add('runBookmarklet', bookmarkletName => {
+  cy.readFile(`./dist/${bookmarkletName}.bookmarklet`, 'utf8')
     .then(bookmarklet => cy.window()
       .its('location')
       .invoke('assign', bookmarklet));

@@ -16,7 +16,7 @@ describe('Kill sticky', () => {
 
     fixed().should('exist');
 
-    cy.runBookmarklet('./dist/kill-sticky.bookmarklet');
+    cy.runBookmarklet('kill-sticky');
 
     fixed().should('not.exist');
   });
@@ -34,7 +34,7 @@ describe('Kill sticky', () => {
 
     sticky().should('exist');
 
-    cy.runBookmarklet('./dist/kill-sticky.bookmarklet');
+    cy.runBookmarklet('kill-sticky');
 
     sticky().should('not.exist');
   });

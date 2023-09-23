@@ -22,7 +22,7 @@ describe('Show media controls', () => {
 
     media().should('not.be.visible');
 
-    cy.runBookmarklet('./dist/show-media-controls.bookmarklet');
+    cy.runBookmarklet('show-media-controls');
 
     media().should('be.visible');
   });

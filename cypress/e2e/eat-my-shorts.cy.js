@@ -12,7 +12,7 @@ describe('Eat my shorts', () => {
 
     cy.visit('/shorts/Pow-kqk0Cr8');
 
-    cy.runBookmarklet('./dist/eat-my-shorts.bookmarklet');
+    cy.runBookmarklet('eat-my-shorts');
 
     cy.url().should('contain', '/watch?v=Pow-kqk0Cr8');
   });

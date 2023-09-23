@@ -5,7 +5,7 @@ declare namespace Cypress {
     /**
      * Run bookmarklet from a given path
      */
-    runBookmarklet(bookmarkletPath: string): Chainable<unknown>;
+    runBookmarklet(bookmarkletName: string): Chainable<unknown>;
 
     /**
      * Set browser's fullscreen mode
