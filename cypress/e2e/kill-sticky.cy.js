@@ -3,23 +3,17 @@
 // @ts-check
 
 describe('Kill sticky', () => {
-  const fixed = () => cy.get('[data-test="fixed-element"]');
-  const sticky = () => cy.get('[data-test="sticky-element"]');
+  it('should remove fixed elements from page', () => {
+    const fixed = () => cy.get('[data-test="fixed-element"]');
 
-  beforeEach(() => {
     cy.intercept('GET', '/', {
       statusCode: 200,
       headers: { 'Content-Type': 'text/html' },
-      body: `
-        <div data-test="fixed-element" style="position: fixed"></div>
-        <div data-test="sticky-element" style="position: sticky"></div>
-      `,
+      body: '<div data-test="fixed-element" style="position: fixed"></div>',
     });
 
     cy.visit('/');
-  });
 
-  it('should remove fixed elements from page', () => {
     fixed().should('exist');
 
     cy.runBookmarklet('./dist/kill-sticky.bookmarklet');
@@ -28,6 +22,16 @@ describe('Kill sticky', () => {
   });
 
   it('should remove sticky elements from page', () => {
+    const sticky = () => cy.get('[data-test="sticky-element"]');
+
+    cy.intercept('GET', '/', {
+      statusCode: 200,
+      headers: { 'Content-Type': 'text/html' },
+      body: '<div data-test="sticky-element" style="position: sticky"></div>',
+    });
+
+    cy.visit('/');
+
     sticky().should('exist');
 
     cy.runBookmarklet('./dist/kill-sticky.bookmarklet');
