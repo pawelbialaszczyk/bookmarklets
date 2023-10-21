@@ -37,6 +37,7 @@ const createInfo = info => {
 const createContainer = (...children) => {
   const el = document.createElement('div');
 
+  el.id = 'playback-rate-controls';
   el.setAttribute('data-test', 'playback-rate-controls');
 
   Object.assign(el.style, {
@@ -66,6 +67,10 @@ const slowerBtn = createButton('Slower');
 const infoEl = createInfo(media.playbackRate.toFixed(1));
 const fasterBtn = createButton('Faster');
 const container = createContainer(slowerBtn, infoEl, fasterBtn);
+
+if (document.getElementById('playback-rate-controls')) {
+  return;
+}
 
 document.body.appendChild(container);
 

@@ -89,4 +89,12 @@ describe('Playback rate controls', () => {
 
     controls().should('exist').and('be.visible');
   });
+
+  it('should embed controls only once', () => {
+    controls().should('have.length', 1);
+
+    cy.runBookmarklet('playback-rate-controls');
+
+    controls().should('have.length', 1);
+  });
 });

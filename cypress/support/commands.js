@@ -7,6 +7,8 @@ Cypress.Commands.add('runBookmarklet', bookmarkletName => {
     .then(bookmarklet => cy.window()
       .its('location')
       .invoke('assign', bookmarklet));
+
+  cy.wait(0); // Wait for bookmarklet to load
 });
 
 Cypress.Commands.add('setFullscreen', isFullscreen => {
