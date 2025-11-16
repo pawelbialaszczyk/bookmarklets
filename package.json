@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "bookmarkleter": "^1.1.0",
-    "cypress": "^13.6.4"
+    "cypress": "^15.6.0"
   }
 }
