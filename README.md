@@ -1,4 +1,4 @@
-[![Build status](https://github.com/pawelbialaszczyk/bookmarklets/workflows/Build/badge.svg)](https://github.com/pawelbialaszczyk/bookmarklets)
+[![Build status](https://github.com/pawelbialaszczyk/bookmarklets/actions/workflows/main.yml/badge.svg)](https://github.com/pawelbialaszczyk/bookmarklets)
 
 # Bookmarklets
 
